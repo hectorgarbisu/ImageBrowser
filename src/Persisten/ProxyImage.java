@@ -25,7 +25,7 @@ public class ProxyImage extends Image {
     }
 
     private void checkLoader() {
-        if (imageLoader!= null)return;
+        if (realImage!= null)return;
         realImage=imageLoader.load();
     }
 }

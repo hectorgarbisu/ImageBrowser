@@ -3,6 +3,7 @@ package View;
 import Model.Image;
 import java.awt.Graphics;
 import javax.swing.JPanel;
+import Persisten.SwingBitmap;
 
 /**
  *
@@ -10,12 +11,7 @@ import javax.swing.JPanel;
  */
 public class ImageViewerPanel extends JPanel implements ImageViewer {
 
-    Image image;
-
-    public ImageViewerPanel(Image image) {
-        this.image = image;
-        repaint();
-    }
+    private Image image;
 
     @Override
     public Image getImage() {
@@ -25,10 +21,21 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
     @Override
     public void setImage(Image image2) {
         image = image2;
+        repaint();
     }
-   
+
     @Override
     public void paint(Graphics graphics) {
-    
+        if (image == null) {
+            return;
+        }
+        super.paint(graphics);
+        if (image.getBitMap() instanceof SwingBitmap) {
+            graphics.drawImage(getBufferedImage((SwingBitmap) image.getBitMap()), 0, 0, null);
+        }
+    }
+
+    private java.awt.Image getBufferedImage(SwingBitmap swingBitmap) {
+        return swingBitmap.getBufferdImage();
     }
 }

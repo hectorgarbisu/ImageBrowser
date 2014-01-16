@@ -22,7 +22,15 @@ public class AplicationFrame extends JFrame {
         this.setSize(new Dimension(500, 500));
         this.setLocationRelativeTo(null);
         createComponent();
-        this.setVisible(true);
+       // this.setVisible(true);
+    }
+
+    public ActionListenerFactory getActionListenerFactory() {
+        return actionListenerFactory;
+    }
+
+    public ImageViewer getImageViewer() {
+        return imageViewer;
     }
 
     private void createComponent() {
@@ -31,7 +39,8 @@ public class AplicationFrame extends JFrame {
     }
 
     private JPanel cretePanel() {
-        return new JPanel();
+        imageViewer=new ImageViewerPanel();
+        return (JPanel) imageViewer;
     }
 
     private JPanel createToolBar() {

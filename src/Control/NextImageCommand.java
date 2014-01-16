@@ -16,6 +16,6 @@ public class NextImageCommand implements Command {
 
     @Override
     public void execute() {
-        imageViewer.getImage().getNext();
+        imageViewer.setImage(imageViewer.getImage().getNext());  
     }
 }

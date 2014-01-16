@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
  *
  * @author osvaldo
  */
-class SwingBitmap implements BitMap {
+public class SwingBitmap implements BitMap {
 
     BufferedImage bufferdImage;
 

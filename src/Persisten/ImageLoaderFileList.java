@@ -24,6 +24,10 @@ public class ImageLoaderFileList implements ImageLoaderList {
 
     @Override
     public List<Image> load() {
+        return linkImage(loadImage());
+    }
+
+    public List<Image> loadImage() {
         List<Image> imageList = new ArrayList<>();
         for (String name : new File(path).list()) {
             imageList.add(new ProxyImage(new ImageLoaderFile(path + "/" + name)));
@@ -34,8 +38,8 @@ public class ImageLoaderFileList implements ImageLoaderList {
     public List<Image> linkImage(List<Image> images) {
         for (int i = 0; i < images.size(); i++) {
             Image image = images.get(i);
-            image.setNext(images.get(i + 1 % images.size()));
-            image.setPrev(images.get(i - 1 % images.size()));
+            image.setNext(images.get((i + 1) % images.size()));
+            image.setPrev(images.get((i + images.size() - 1) % images.size()));
         }
         return images;
     }
