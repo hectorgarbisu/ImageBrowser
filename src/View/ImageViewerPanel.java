@@ -17,8 +17,7 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
     private Image image;
     private int initialX;
     private int offset;
-    private Image nextImage;
-    private Image prevImage;
+  
 
     public ImageViewerPanel() {
         offset = 0;
@@ -97,14 +96,12 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
         this.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                System.out.println("aguantando" + e.getX());
                 offset = e.getX() - initialX;
                 repaint();
             }
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                System.out.println("moviendo en " + e.getX());
             }
         });
     }
