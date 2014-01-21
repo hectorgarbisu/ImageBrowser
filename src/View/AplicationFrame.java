@@ -13,7 +13,7 @@ public class AplicationFrame extends JFrame {
     private ImageViewer imageViewer;
 
     public AplicationFrame(ActionListenerFactory actionListenerFactory) {
-        super("Image Viwer");
+        super("Image Viewer");
         this.actionListenerFactory = actionListenerFactory;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(new Dimension(1024, 768));
@@ -50,12 +50,14 @@ public class AplicationFrame extends JFrame {
     private JButton createPrev() {
         JButton jButton = new JButton("Prev");
         jButton.addActionListener(actionListenerFactory.create("prev") );
+        jButton.addActionListener(actionListenerFactory.create("setTitle") );
         return jButton;
     }
 
     private JButton createNext() {
         JButton jButton = new JButton("Next");
         jButton.addActionListener(actionListenerFactory.create("next") );
+        jButton.addActionListener(actionListenerFactory.create("setTitle") );
         return jButton;
     }
 }

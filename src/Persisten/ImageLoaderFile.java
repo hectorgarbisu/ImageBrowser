@@ -17,7 +17,9 @@ public class ImageLoaderFile implements ImageLoader {
 
     @Override
     public RealImage load() {
-        return new RealImage(new SwingBitmap(loadImage()));
+        RealImage realImage = new RealImage(new SwingBitmap(loadImage()));
+        realImage.setTitle(fileName);
+        return realImage;
     }
 
     private BufferedImage loadImage() {

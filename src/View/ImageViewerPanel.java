@@ -71,7 +71,6 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
             public void mouseReleased(MouseEvent e) {
                 if (offset>-image.getBitMap().getWidth()/2 )
                     image=image.getPrev();
-                    System.out.println(image.getBitMap().getWidth()/2);
                 
                 if (offset<image.getBitMap().getWidth()/2 )
                     image=image.getNext();
@@ -94,7 +93,6 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
             @Override
             public void mouseDragged(MouseEvent e) {
                 offset = e.getX() - initialX;
-                System.out.println(offset);
                 repaint();
             }
 

@@ -6,6 +6,7 @@ package ImageBrowser;
  * Héctor Garbisu Arocha
  * Adrián Mujica González
  */
+import Control.setTitleCommand;
 import Control.DictionaryCommand;
 import Control.NextImageCommand;
 import Control.PrevImageCommand;
@@ -24,7 +25,7 @@ public class Aplication {
     }
 
     private void execute() {
-        final DictionaryCommand commandSet = new DictionaryCommand();
+        final DictionaryCommand setCommand = new DictionaryCommand();
         ImageLoaderFileList imageLoaderFileList=new ImageLoaderFileList(Path);
         List<Image>list= imageLoaderFileList.load();
         ActionListenerFactory actionListenerFactory = new ActionListenerFactory() {
@@ -33,7 +34,7 @@ public class Aplication {
                 return new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        commandSet.get(name).execute();
+                        setCommand.get(name).execute();
 
                     }
                 };
@@ -41,8 +42,9 @@ public class Aplication {
         };
         AplicationFrame frame=new AplicationFrame(actionListenerFactory);
         frame.getImageViewer().setImage(list.get(0));
-        commandSet.put("next", new NextImageCommand(frame.getImageViewer()));
-        commandSet.put("prev", new PrevImageCommand(frame.getImageViewer()));
+        setCommand.put("next", new NextImageCommand(frame.getImageViewer()));
+        setCommand.put("prev", new PrevImageCommand(frame.getImageViewer()));
+        setCommand.put("setTitle", new setTitleCommand(frame,frame.getImageViewer()));
         frame.setVisible(true);
     }
 }

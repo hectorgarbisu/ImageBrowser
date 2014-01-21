@@ -5,10 +5,12 @@ public class RealImage extends Image {
 
     public RealImage(BitMap bitmap) {
         this.bitmap = bitmap;
+  
     }
 
     @Override
     public BitMap getBitMap() {
         return bitmap;
     }
+
 }
