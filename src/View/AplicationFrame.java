@@ -19,7 +19,7 @@ public class AplicationFrame extends JFrame {
         super("Image Viwer");
         this.actionListenerFactory = actionListenerFactory;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(new Dimension(500, 500));
+        this.setSize(new Dimension(1024, 768));
         this.setLocationRelativeTo(null);
         createComponent();
        // this.setVisible(true);

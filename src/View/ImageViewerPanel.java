@@ -73,10 +73,11 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (offset>image.getBitMap().getWidth()/2 )
+                if (offset>-image.getBitMap().getWidth()/2 )
                     image=image.getPrev();
+                    System.out.println(image.getBitMap().getWidth()/2);
                 
-                if (offset<-image.getBitMap().getWidth()/2 )
+                if (offset<image.getBitMap().getWidth()/2 )
                     image=image.getNext();
                 offset=0;
                 repaint();
@@ -97,6 +98,7 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
             @Override
             public void mouseDragged(MouseEvent e) {
                 offset = e.getX() - initialX;
+                System.out.println(offset);
                 repaint();
             }
 
@@ -115,7 +117,7 @@ public class ImageViewerPanel extends JPanel implements ImageViewer {
                                                 (int) (image.getBitMap().getWidth()+ offset), 
                                                 0, null);
         } else {
-            graphics.drawImage(getBufferedImage((SwingBitmap) image.getNext().getBitMap()), 
+            graphics.drawImage(getBufferedImage((SwingBitmap) image.getPrev().getBitMap()), 
                               (int) (offset-image.getBitMap().getWidth()), 
                                0, null);
         }

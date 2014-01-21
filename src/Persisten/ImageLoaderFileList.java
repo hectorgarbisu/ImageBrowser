@@ -30,7 +30,9 @@ public class ImageLoaderFileList implements ImageLoaderList {
     public List<Image> loadImage() {
         List<Image> imageList = new ArrayList<>();
         for (String name : new File(path).list()) {
+            if(name.contains(".npg")||name.contains(".jpg")||name.contains(".bmp")||name.contains(".gif")){
             imageList.add(new ProxyImage(new ImageLoaderFile(path + "/" + name)));
+            }
         }
         return imageList;
     }

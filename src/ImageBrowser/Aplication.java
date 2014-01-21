@@ -1,5 +1,11 @@
 package ImageBrowser;
-
+/**
+ * Authors:
+ * Juan Daniel Cabrera Déniz
+ * David Díaz González
+ * Héctor Garbisu Arocha
+ * Adrián Mujica González
+ */
 import Control.DictionaryCommand;
 import Control.NextImageCommand;
 import Control.PrevImageCommand;
@@ -12,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class Aplication {
- static  final String Path="D:\\Dropbox\\fotos";
+ static  final String Path="C:\\Users\\Public\\Pictures\\Sample Pictures";
     public static void main(String[] args) {
         new Aplication().execute();
     }
