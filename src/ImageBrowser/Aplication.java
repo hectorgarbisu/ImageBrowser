@@ -24,7 +24,7 @@ public class Aplication {
     }
 
     private void execute() {
-        final DictionaryCommand setCommand = new DictionaryCommand();
+        final DictionaryCommand commandSet = new DictionaryCommand();
         ImageLoaderFileList imageLoaderFileList=new ImageLoaderFileList(Path);
         List<Image>list= imageLoaderFileList.load();
         ActionListenerFactory actionListenerFactory = new ActionListenerFactory() {
@@ -33,7 +33,7 @@ public class Aplication {
                 return new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        setCommand.get(name).execute();
+                        commandSet.get(name).execute();
 
                     }
                 };
@@ -41,8 +41,8 @@ public class Aplication {
         };
         AplicationFrame frame=new AplicationFrame(actionListenerFactory);
         frame.getImageViewer().setImage(list.get(0));
-        setCommand.put("next", new NextImageCommand(frame.getImageViewer()));
-        setCommand.put("prev", new PrevImageCommand(frame.getImageViewer()));
+        commandSet.put("next", new NextImageCommand(frame.getImageViewer()));
+        commandSet.put("prev", new PrevImageCommand(frame.getImageViewer()));
         frame.setVisible(true);
     }
 }

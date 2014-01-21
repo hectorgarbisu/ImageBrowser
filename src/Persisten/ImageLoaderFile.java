@@ -7,10 +7,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-/**
- *
- * @author osvaldo
- */
 public class ImageLoaderFile implements ImageLoader {
 
     private String fileName;

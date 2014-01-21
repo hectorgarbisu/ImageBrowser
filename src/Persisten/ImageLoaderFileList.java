@@ -6,10 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author osvaldo
- */
+
 public class ImageLoaderFileList implements ImageLoaderList {
 
     String path;

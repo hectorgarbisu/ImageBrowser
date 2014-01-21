@@ -2,10 +2,6 @@ package Control;
 
 import View.ImageViewer;
 
-/**
- *
- * @author osvaldo
- */
 public class PrevImageCommand implements Command {
 ImageViewer imageViewer;
 

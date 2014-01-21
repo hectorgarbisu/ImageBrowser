@@ -1,8 +1,4 @@
 package Model;
-/**
- *
- * @author osvaldo
- */
 public abstract class Image {
     private Image next;
     private Image prev;

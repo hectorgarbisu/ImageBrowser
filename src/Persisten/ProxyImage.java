@@ -5,10 +5,7 @@ import Model.Image;
 import Model.RealImage;
 import Persisten.Interface.ImageLoader;
 
-/**
- *
- * @author osvaldo
- */
+
 public class ProxyImage extends Image {
 
     private ImageLoader imageLoader;

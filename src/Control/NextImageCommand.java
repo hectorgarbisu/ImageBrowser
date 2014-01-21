@@ -2,10 +2,7 @@ package Control;
 
 import View.ImageViewer;
 
-/**
- *
- * @author osvaldo
- */
+
 public class NextImageCommand implements Command {
 
     ImageViewer imageViewer;

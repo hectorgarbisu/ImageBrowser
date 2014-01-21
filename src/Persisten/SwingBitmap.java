@@ -2,10 +2,7 @@ package Persisten;
 
 import Model.BitMap;
 import java.awt.image.BufferedImage;
-/**
- *
- * @author osvaldo
- */
+
 public class SwingBitmap implements BitMap {
 
     BufferedImage bufferdImage;

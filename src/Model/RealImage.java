@@ -1,8 +1,4 @@
 package Model;
-/**
- *
- * @author osvaldo
- */
 public class RealImage extends Image {
 
     BitMap bitmap;

@@ -2,10 +2,6 @@ package Control;
 
 import java.util.HashMap;
 
-/**
- *
- * @author osvaldo
- */
 public class DictionaryCommand {
 
     HashMap<String,Command>setcommand;

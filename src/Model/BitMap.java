@@ -1,9 +1,5 @@
 package Model;
 
-/**
- *
- * @author osvaldo
- */
 public interface BitMap {
 
 public double getWidth();

@@ -6,10 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-/**
- *
- * @author osvaldo
- */
+
 public class AplicationFrame extends JFrame {
 
     private ActionListenerFactory actionListenerFactory;
